@@ -1,18 +1,18 @@
-# SakhiPath - Women's Safety & Empowerment Platform
+# SakhiPath - Personal Safety & Empowerment Platform
 
-Smart safety navigation with AI-powered safe routes, legal awareness, self-defense training, and emergency SOS - all in one platform.
+Smart safety navigation with AI-powered safe routes, legal awareness, self-defense training, and emergency SOS - all in one platform for everyone.
 
 ## 🎯 Problem Statement
 
-Women need safe routes, not just fast ones. With 88% feeling unsafe during travel, 73% unaware of their legal rights, and limited access to self-defense training, no integrated platform exists to address safety, knowledge, and empowerment together.
+People need safe routes, not just fast ones. With many feeling unsafe during travel, lacking awareness of their legal rights, and limited access to self-defense training, no integrated platform exists to address safety, knowledge, and empowerment together.
 
 ## ✨ Key Features
 
 - **🗺️ Smart Safe Navigation**: AI-powered routes based on lighting, crowd density, and safety data
 - **🆘 Emergency SOS**: One-tap alerts to trusted contacts with live location tracking
-- **📚 Legal Awareness Hub**: AI chatbot providing instant access to women's rights and laws
+- **📚 Legal Awareness Hub**: AI chatbot providing instant access to legal rights and laws
 - **🎓 Self-Defense Training**: Free video tutorials accessible anytime
-- **🌍 13 Languages**: Reaching 300M+ Indian women in their native language
+- **🌍 13 Languages**: Reaching millions of users in their native language
 - **🔐 Google Integration**: Firebase Auth, Cloud Messaging, Analytics, Maps API
 
 ## 🚀 Quick Start
