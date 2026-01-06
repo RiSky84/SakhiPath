@@ -1,6 +1,6 @@
-# SakhiPath - Personal Safety & Empowerment Platform
+# SakhiPath - Empowerment & Knowledge Platform
 
-Smart safety navigation with AI-powered safe routes, legal awareness, self-defense training, and emergency SOS - all in one platform for everyone.
+Empowering everyone with knowledge, safety, and confidence through AI-powered navigation, legal awareness, self-defense training, and emergency assistance.
 
 ## 🎯 Problem Statement
 
