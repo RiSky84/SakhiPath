@@ -53,10 +53,18 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+    
     return Scaffold(
-      backgroundColor: AppColors.background,
-      body: CustomScrollView(
-        slivers: [
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: CustomPaint(
+              painter: GridPainter(isDark: isDark),
+            ),
+          ),
+          CustomScrollView(
+            slivers: [
 
           SliverAppBar(
             expandedHeight: 200,
@@ -221,21 +229,16 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
+                              Text(
                                 'AI Assistant Ready',
-                                style: TextStyle(
-                                  fontSize: 18,
+                                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                                   fontWeight: FontWeight.bold,
-                                  color: AppColors.textPrimary,
                                 ),
                               ),
                               const SizedBox(height: 4),
                               Text(
                                 'Your personal guide for everyone\'s safety & growth',
-                                style: TextStyle(
-                                  fontSize: 13,
-                                  color: AppColors.textSecondary,
-                                ),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),
@@ -255,13 +258,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
 
                   const SizedBox(height: 28),
 
-                  const Text(
+                  Text(
                     'Explore Features',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: AppColors.textPrimary,
-                    ),
+                    style: Theme.of(context).textTheme.displaySmall,
                   ),
                   const SizedBox(height: 16),
 
@@ -285,7 +284,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
                         title: 'Safety Hub',
                         subtitle: 'Real-time Protection',
                         gradient: [AppColors.secondary, AppColors.secondaryLight],
-                        onTap: () {},
+                        onTap: () => Navigator.pushNamed(context, AppRouter.safetyHub),
                       ),
                       _buildFeatureCard(
                         icon: Icons.location_on_outlined,
@@ -400,24 +399,23 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
               ),
             ),
           ),
+            ],
+          ),
         ],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              blurRadius: 20,
-              offset: const Offset(0, -5),
+          border: Border(
+            top: BorderSide(
+              color: Theme.of(context).dividerColor,
+              width: 1,
             ),
-          ],
+          ),
         ),
         child: BottomNavigationBar(
           currentIndex: _selectedIndex,
           onTap: _onBottomNavTap,
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColors.primary,
-          unselectedItemColor: AppColors.textSecondary,
           showSelectedLabels: true,
           showUnselectedLabels: true,
           elevation: 0,
@@ -537,7 +535,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
       child: Container(
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: Theme.of(context).cardColor,
           borderRadius: BorderRadius.circular(16),
           border: Border.all(
             color: color.withOpacity(0.2),
@@ -565,10 +563,9 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
             Text(
               label,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
-                color: AppColors.textPrimary,
                 height: 1.3,
               ),
             ),
@@ -577,4 +574,53 @@ class _HomeScreenState extends ConsumerState<HomeScreen> with SingleTickerProvid
       ),
     );
   }
+}
+
+class GridPainter extends CustomPainter {
+  final bool isDark;
+  
+  GridPainter({required this.isDark});
+  
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()
+      ..color = (isDark ? AppColors.primary : AppColors.primary).withOpacity(isDark ? 0.03 : 0.02)
+      ..strokeWidth = 1
+      ..style = PaintingStyle.stroke;
+
+    const spacing = 40.0;
+    
+    for (double i = 0; i < size.width; i += spacing) {
+      canvas.drawLine(
+        Offset(i, 0),
+        Offset(i, size.height),
+        paint,
+      );
+    }
+    
+    for (double i = 0; i < size.height; i += spacing) {
+      canvas.drawLine(
+        Offset(0, i),
+        Offset(size.width, i),
+        paint,
+      );
+    }
+
+    final glowPaint = Paint()
+      ..color = (isDark ? AppColors.primary : AppColors.primary).withOpacity(isDark ? 0.05 : 0.03)
+      ..strokeWidth = 0.5
+      ..style = PaintingStyle.stroke
+      ..maskFilter = const MaskFilter.blur(BlurStyle.normal, 3);
+
+    for (double i = spacing; i < size.width; i += spacing * 2) {
+      canvas.drawLine(
+        Offset(i, 0),
+        Offset(i, size.height),
+        glowPaint,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

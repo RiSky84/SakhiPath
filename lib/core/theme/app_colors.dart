@@ -3,33 +3,41 @@ import 'package:flutter/material.dart';
 class AppColors {
   AppColors._();
 
-  static const Color neonCyan = Color(0xFF00F0FF);
-  static const Color neonPurple = Color(0xFFBF40BF);
-  static const Color neonPink = Color(0xFFFF10F0);
-  static const Color neonBlue = Color(0xFF0080FF);
-  static const Color neonGreen = Color(0xFF39FF14);
+  static const Color neonCyan = Color(0xFF00E5FF);
+  static const Color neonPurple = Color(0xFFD946EF);
+  static const Color neonPink = Color(0xFFFF0080);
+  static const Color neonBlue = Color(0xFF3B82F6);
+  static const Color neonGreen = Color(0xFF10B981);
 
-  static const Color primary = neonCyan;
-  static const Color primaryDark = Color(0xFF00C8D4);
-  static const Color primaryLight = Color(0xFF5FFBFF);
+  static const Color primary = Color(0xFF06B6D4);
+  static const Color primaryDark = Color(0xFF0891B2);
+  static const Color primaryLight = Color(0xFF22D3EE);
 
-  static const Color secondary = neonPurple;
-  static const Color secondaryDark = Color(0xFF9B2C9B);
-  static const Color secondaryLight = Color(0xFFE066E0);
+  static const Color secondary = Color(0xFFA855F7);
+  static const Color secondaryDark = Color(0xFF9333EA);
+  static const Color secondaryLight = Color(0xFFC084FC);
 
-  static const Color accent = neonPink;
-  static const Color accentLight = Color(0xFFFF5AF5);
+  static const Color accent = Color(0xFFEC4899);
+  static const Color accentLight = Color(0xFFF472B6);
 
-  static const Color darkBg = Color(0xFF0A0E1A);
-  static const Color darkerBg = Color(0xFF050810);
+  static const Color darkBg = Color(0xFF0F172A);
+  static const Color darkerBg = Color(0xFF020617);
   static const Color background = darkBg;
-  static const Color surface = Color(0xFF141927);
-  static const Color surfaceVariant = Color(0xFF1A2332);
-  static const Color cardBg = Color(0xFF0F1420);
+  static const Color surface = Color(0xFF1E293B);
+  static const Color surfaceVariant = Color(0xFF334155);
+  static const Color cardBg = Color(0xFF1E293B);
 
-  static const Color textPrimary = Color(0xFFFFFFFF);
-  static const Color textSecondary = Color(0xFFB0B8C8);
-  static const Color textTertiary = Color(0xFF7A8499);
+  static const Color lightBg = Color(0xFFF8FAFC);
+  static const Color lightSurface = Color(0xFFFFFFFF);
+  static const Color lightSurfaceVariant = Color(0xFFF1F5F9);
+
+  static const Color textPrimary = Color(0xFFF8FAFC);
+  static const Color textSecondary = Color(0xFFCBD5E1);
+  static const Color textTertiary = Color(0xFF94A3B8);
+
+  static const Color textPrimaryLight = Color(0xFF0F172A);
+  static const Color textSecondaryLight = Color(0xFF475569);
+  static const Color textTertiaryLight = Color(0xFF64748B);
 
   static const Color success = neonGreen;
   static const Color warning = Color(0xFFFFD60A);

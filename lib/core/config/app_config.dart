@@ -6,7 +6,7 @@ class AppConfig {
   static const String appVersion = '1.0.0';
   static const String appTagline = 'Empowering Women\'s Safety';
 
-  static const String baseUrl = 'https:
+  static const String baseUrl = 'https://byyihqnxuskiswmutbwc.supabase.co';
   static const String apiVersion = 'v1';
   static String get apiBaseUrl => '$baseUrl/api/$apiVersion';
 

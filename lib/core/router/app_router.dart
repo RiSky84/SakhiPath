@@ -14,6 +14,7 @@ import '../../features/google_features/presentation/screens/google_features_scre
 import '../../features/laws/presentation/screens/laws_library_screen.dart';
 import '../../features/ai_assistant/presentation/screens/ai_assistant_screen.dart';
 import '../../features/learning/presentation/screens/learning_hub_screen.dart';
+import '../../features/safety/presentation/screens/safety_hub_screen.dart';
 
 class AppRouter {
   AppRouter._();
@@ -32,6 +33,7 @@ class AppRouter {
   static const String lawsLibrary = '/laws-library';
   static const String aiAssistant = '/ai-assistant';
   static const String learningHub = '/learning-hub';
+  static const String safetyHub = '/safety-hub';
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -84,6 +86,9 @@ class AppRouter {
 
       case learningHub:
         return MaterialPageRoute(builder: (_) => const LearningHubScreen());
+
+      case safetyHub:
+        return MaterialPageRoute(builder: (_) => const SafetyHubScreen());
 
       default:
         return MaterialPageRoute(

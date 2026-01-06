@@ -75,12 +75,101 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
 
-                Icon(
-                  Icons.shield_outlined,
-                  size: 120,
-                  color: Colors.white,
+                Container(
+                  width: 200,
+                  height: 200,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    border: Border.all(
+                      color: Colors.white.withOpacity(0.3),
+                      width: 2,
+                    ),
+                  ),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'SYNTAX',
+                          style: TextStyle(
+                            color: Colors.white.withOpacity(0.7),
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 3,
+                          ),
+                        ),
+                        Text(
+                          'ERROR',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                            letterSpacing: 2,
+                            shadows: [
+                              Shadow(
+                                color: Theme.of(context).colorScheme.secondary,
+                                blurRadius: 10,
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              '{',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.secondary,
+                                fontSize: 40,
+                                shadows: [
+                                  Shadow(
+                                    color: Theme.of(context).colorScheme.secondary,
+                                    blurRadius: 15,
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 20),
+                            Container(
+                              padding: EdgeInsets.all(8),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: Colors.white.withOpacity(0.5),
+                                  width: 2,
+                                ),
+                              ),
+                              child: Text(
+                                'SE',
+                                style: TextStyle(
+                                  color: Colors.white.withOpacity(0.7),
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 20),
+                            Text(
+                              '}',
+                              style: TextStyle(
+                                color: Theme.of(context).colorScheme.tertiary,
+                                fontSize: 40,
+                                shadows: [
+                                  Shadow(
+                                    color: Theme.of(context).colorScheme.tertiary,
+                                    blurRadius: 15,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 40),
 
                 Text(
                   'SakhiPath',
@@ -92,9 +181,18 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
                 const SizedBox(height: 8),
 
                 Text(
-                  'Empowering Women\'s Safety',
+                  'Empowering Everyone Together',
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                         color: Colors.white.withOpacity(0.9),
+                      ),
+                ),
+                const SizedBox(height: 16),
+
+                Text(
+                  'By SYNTAX ERROR',
+                  style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: Colors.white.withOpacity(0.7),
+                        letterSpacing: 2,
                       ),
                 ),
               ],

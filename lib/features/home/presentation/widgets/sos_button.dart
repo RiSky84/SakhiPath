@@ -45,43 +45,83 @@ class _SOSButtonState extends State<SOSButton> with SingleTickerProviderStateMix
       child: AnimatedBuilder(
         animation: _pulseAnimation,
         builder: (context, child) {
-          return Transform.scale(
-            scale: _pulseAnimation.value,
-            child: Container(
-              width: 120,
-              height: 120,
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                gradient: AppColors.sosGradient,
-                boxShadow: [
-                  BoxShadow(
-                    color: AppColors.sos.withOpacity(0.4),
-                    blurRadius: 24,
-                    spreadRadius: 4,
-                  ),
-                ],
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(
-                      Icons.warning_rounded,
-                      color: Colors.white,
-                      size: 48,
-                    ),
-                    const SizedBox(height: 4),
-                    Text(
-                      'SOS',
-                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
+          return Stack(
+            alignment: Alignment.center,
+            children: [
+              Container(
+                width: 140,
+                height: 140,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.sos.withOpacity(0.3 * _pulseAnimation.value),
+                      blurRadius: 40,
+                      spreadRadius: 10,
                     ),
                   ],
                 ),
               ),
-            ),
+              Transform.scale(
+                scale: _pulseAnimation.value,
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    gradient: AppColors.sosGradient,
+                    border: Border.all(
+                      color: AppColors.neonPink.withOpacity(0.6),
+                      width: 2,
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                        color: AppColors.sos.withOpacity(0.6),
+                        blurRadius: 30,
+                        spreadRadius: 5,
+                      ),
+                      BoxShadow(
+                        color: AppColors.neonPink.withOpacity(0.4),
+                        blurRadius: 50,
+                        spreadRadius: 10,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.warning_rounded,
+                          color: Colors.white,
+                          size: 48,
+                          shadows: [
+                            Shadow(
+                              color: AppColors.neonPink.withOpacity(0.8),
+                              blurRadius: 20,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          'SOS',
+                          style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold,
+                                shadows: [
+                                  Shadow(
+                                    color: AppColors.neonPink.withOpacity(0.8),
+                                    blurRadius: 15,
+                                  ),
+                                ],
+                              ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),

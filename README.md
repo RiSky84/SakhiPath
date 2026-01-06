@@ -43,73 +43,10 @@ flutter build apk --release
 - **Cloud**: Firebase (Auth, Messaging, Analytics)
 - **AI/ML**: Safety scoring algorithms
 
-  ```sh
-  sudo dpkg -i <...>.deb
-  ```
-
-  ```sh
-  sudo rpm -i <...>.rpm
-  ```
-
-  ```sh
-  sudo pacman -U <...>.pkg.tar.zst
-  ```
-</details>
-
-<details>
-  <summary><b>Other Platforms</b></summary>
-
-  You can also install the CLI via [go modules](https://go.dev/ref/mod#go-install) without the help of package managers.
-
-  ```sh
-  go install github.com/supabase/cli@latest
-  ```
-
-  Add a symlink to the binary in `$PATH` for easier access:
-
-  ```sh
-  ln -s "$(go env GOPATH)/bin/cli" /usr/bin/supabase
-  ```
-
-  This works on other non-standard Linux distros.
-</details>
-
-<details>
-  <summary><b>Community Maintained Packages</b></summary>
-
-  Available via [pkgx](https://pkgx.sh/). Package script [here](https://github.com/pkgxdev/pantry/blob/main/projects/supabase.com/cli/package.yml).
-  To install in your working directory:
-
-  ```bash
-  pkgx install supabase
-  ```
-
-  Available via [Nixpkgs](https://nixos.org/). Package script [here](https://github.com/NixOS/nixpkgs/blob/master/pkgs/development/tools/supabase-cli/default.nix).
-</details>
-
-### Run the CLI
-
-```bash
-supabase bootstrap
-```
-
-Or using npx:
-
-```bash
-npx supabase bootstrap
-```
-
-## 📖 Documentation
-
-- [Language System Guide](LANGUAGE_SYSTEM.md) - 13 language support
-- [Google Integration](GOOGLE_INTEGRATION.md) - Firebase & Google services
-- [Presentation Guide](PRESENTATION_GUIDE.md) - Project overview & pitch deck
-- [Setup Complete](SETUP_COMPLETE.md) - Configuration details
-
 ## 📄 License
 
-See [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](LICENSE) file for details.
 
 ---
 
-**SakhiPath** - Empowering women to navigate life safely and confidently.
+**SakhiPath** - Empowering everyone to navigate life safely and confidently.
